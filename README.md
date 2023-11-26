@@ -1,3 +1,8 @@
+# [PREVIEW] (https://dattebayo-ten.vercel.app/)
+
+https://dattebayo-ten.vercel.app/
+![Alt text](<Screenshot 2023-11-26 at 23.17.14.png>)
+
 # Dattebayo
 
 I've been diving deep into learning server-side actions with Next.js 14, mastering server rendering for optimized performance. Additionally, I've explored implementing infinite scroll functionality and integrated Framer Motion for seamless and captivating transitions within the project.

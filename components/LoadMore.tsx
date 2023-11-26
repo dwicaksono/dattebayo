@@ -1,6 +1,6 @@
 "use client";
 
-import type { CharacterCardProp, CharacterJX } from "@/types";
+import type { CharacterJX } from "@/types";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { fetchCharacter } from "@/server/action.character";
