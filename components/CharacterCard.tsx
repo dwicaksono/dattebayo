@@ -1,4 +1,3 @@
-"use client";
 import type { CharacterCardProp } from "@/types";
 import Image from "next/image";
 import React from "react";
@@ -32,6 +31,7 @@ const CharacterCard: React.FC<CharacterCardProp> = ({
 					src={images[0]}
 					fill
 					className="object-cover"
+					sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 				/>
 			</div>
 			<div className="text-center my-3 text-lg font-semibold ">{name}</div>

@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Dattebayo
 
-## Getting Started
+I've been diving deep into learning server-side actions with Next.js 14, mastering server rendering for optimized performance. Additionally, I've explored implementing infinite scroll functionality and integrated Framer Motion for seamless and captivating transitions within the project.
 
-First, run the development server:
+Thanks a lot to [Dattebayo](https://api-dattebayo.vercel.app/docs) team for creating an API related to one of my heroes
+
+## Installation
+
+Utilized the 3rd-party package [react-intersection-observer](https://www.npmjs.com/package/react-intersection-observer) for infinite scroll functionality and incorporated [Framer Motion](https://www.framer.com/motion/animation/) to ensure smooth transitions while loading each picture."
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+yarn
+or
+npm
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+then run
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn dev
+or
+npm dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Ok, Lets talk about SERVER ACTION Next.js 14
 
-## Learn More
+### How Server Action Work ?
 
-To learn more about Next.js, take a look at the following resources:
+With Server Actions, you don't need to manually create API endpoints. Instead, you define asynchronous server functions that can be called directly from your components.
+[...more detail](https://nextjs.org/docs/app/building-your-application/data-fetching/forms-and-mutations#how-server-actions-work)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Okay, now you can dive into this repository, download, or clone it, and then proceed with the execution.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+#### Open the file: folder server/action.character.tsx
 
-## Deploy on Vercel
+![Alt text](image.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+When you look at the code, yup function calls the API, and it's important to utilize 'use server' as we'll be executing this code on the server-side.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+"use server"
+```
+
+Of course, you can query your database using the server action. Next, we'll be attempting to implement this using Action server
+
+now tke look the part we animation transition using [Framer Motion](https://www.framer.com/motion/animation/).
+
+as a i know the default of Next.js App router is server side, its event dont use "use server" on the top of file component.
+
+ok take a look this code we usin framer motion server component mode.
+![Alt text](image-1.png)
+
+and this is the result from browser
+![Alt text](<Screenshot 2023-11-26 at 22.33.31.png>)
+
+### WHY ?
+
+The Framer Motion library operates entirely on the client-side browser.
+
+you can move di motion to other file its mean in this issue we wanna run the animation from framer motion in the server side component.
+
+create the new file:
+![Alt text](image-2.png)
+
+then back to the component we gonna render on the server side.
+![Alt text](image-3.png)
+
+## PART 2 (shoryly, we gonna to implement the grouping of route and protected them)
+
+...Thanks.
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first
+to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
